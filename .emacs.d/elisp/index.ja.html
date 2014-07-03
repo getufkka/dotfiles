@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Auto Complete Mode - GNU Emacsのための最も賢い自動補完機能</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19236027-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+
+<h1 id="Auto_Complete_Mode">Auto Complete Mode</h1><div id="header"><ul>
+<li><a href="/">トップ</a></li>
+<li><a href="/#Softwares">ソフトウェア</a>
+<ul>
+<li><a href="/software/auto-complete/index.ja.html">Auto Complete Mode</a></li>
+<li><a href="/software/rsense/index.ja.html">RSense</a></li>
+<li><a href="/software/gccsense/index.ja.html">GCCSense</a></li>
+<li><a href="/repo/pyparser.git/">PyParser</a></li>
+<li><a href="/repo/undohist.git/">Undo History</a></li>
+</ul></li>
+<li><a href="/#Hacks">ハック</a>
+<ul>
+<li><a href="/hack/emacs-native-profiler.html">Emacs Native Profiler</a></li>
+<li><a href="/hack/emacs-regexp-extension.html">Emacs Regexp Extension</a></li>
+</ul></li>
+<li><a href="/#Publications">公開文書</a></li>
+</ul>
+
+<hr />
+
+<ul>
+<li>連絡
+<ul>
+<li><a href="mailto: tomo@cx4a.org">tomo@cx4a.org</a></li>
+<li><a href="http://twitter.com/m2ym/">Twitter</a></li>
+<li><a href="http://github.com/m2ym/">GitHub</a></li>
+</ul></li>
+</ul></div><div id="content">
+
+<p><em><a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>のための最も賢い自動補完機能</em></p>
+
+<p>[<a href="index.html">English</a>]</p>
+
+<hr />
+
+<ul>
+<li><a href="#Auto_Complete_Mode.E3.81.A8.E3.81.AF" rel="toc">Auto Complete Modeとは</a></li>
+<li><a href="#.E7.89.B9.E5.BE.B4" rel="toc">特徴</a></li>
+<li><a href="#.E3.82.B9.E3.82.AF.E3.83.AA.E3.83.BC.E3.83.B3.E3.82.B7.E3.83.A7.E3.83.83.E3.83.88" rel="toc">スクリーンショット</a></li>
+<li><a href="#.E3.83.87.E3.83.A2" rel="toc">デモ</a></li>
+<li><a href="#.E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89" rel="toc">ダウンロード</a>
+<ul>
+<li><a href="#Latest_Stable" rel="toc">最新安定板 (v1.3.1)</a></li>
+</ul></li>
+<li><a href="#.E3.83.A6.E3.83.BC.E3.82.B6.E3.83.BC.E3.83.9E.E3.83.8B.E3.83.A5.E3.82.A2.E3.83.AB" rel="toc">ユーザーマニュアル</a></li>
+<li><a href="#.E5.88.A9.E7.94.A8.E8.80.85.E3.81.AE.E5.A3.B0" rel="toc">利用者の声</a></li>
+<li><a href="#.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.B3.E3.83.BC.E3.83.89" rel="toc">ソースコード</a></li>
+<li><a href="#.E3.83.90.E3.82.B0.E3.83.AC.E3.83.9D.E3.83.BC.E3.83.88" rel="toc">バグレポート</a></li>
+<li><a href="#.E3.83.A9.E3.82.A4.E3.82.BB.E3.83.B3.E3.82.B9" rel="toc">ライセンス</a></li>
+</ul>
+
+<hr />
+
+<h2 id="Auto_Complete_Mode.E3.81.A8.E3.81.AF">Auto Complete Modeとは</h2>
+
+<p>Auto Complete Modeは<a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>のための最も賢い自動補完機能です。従来の使いづらい補完インターフェースを一新し、ユーザーがより本質的な作業に集中できる環境を提供します。</p>
+
+<h2 id=".E7.89.B9.E5.BE.B4">特徴</h2>
+
+<ul>
+<li>視覚的な操作感</li>
+<li>統計的手法による補完オーバーヘッドの削減</li>
+<li>拡張性</li>
+</ul>
+
+<h2 id=".E3.82.B9.E3.82.AF.E3.83.AA.E3.83.BC.E3.83.B3.E3.82.B7.E3.83.A7.E3.83.83.E3.83.88">スクリーンショット</h2>
+
+<p><img src="ac.png" alt="" title="自動補完" /> <img src="ac-fuzzy.png" alt="" title="曖昧補完" /> <img src="ac-isearch.png" alt="" title="インクリメンタル検索" /></p>
+
+<h2 id=".E3.83.87.E3.83.A2">デモ</h2>
+
+<ul>
+<li><a href="http://www.youtube.com/watch?v=rGVVnDxwJYE">YouTube</a></li>
+<li><a href="demo.html">Ogg Theora with video tag</a></li>
+</ul>
+
+<h2 id=".E3.83.80.E3.82.A6.E3.83.B3.E3.83.AD.E3.83.BC.E3.83.89">ダウンロード</h2>
+
+<h3 id="Latest_Stable">最新安定板 (v1.3.1)</h3>
+
+<p><a href="changes.ja.html#Changes_v1.3.1">v1.3.1の変更点</a></p>
+
+<ul>
+<li><a href="http://cx4a.org/pub/auto-complete/auto-complete-1.3.1.tar.bz2">auto-complete-1.3.1.tar.bz2</a></li>
+<li><a href="http://cx4a.org/pub/auto-complete/auto-complete-1.3.1.zip">auto-complete-1.3.1.tar.zip</a></li>
+</ul>
+
+<h2 id=".E3.83.A6.E3.83.BC.E3.82.B6.E3.83.BC.E3.83.9E.E3.83.8B.E3.83.A5.E3.82.A2.E3.83.AB">ユーザーマニュアル</h2>
+
+<p><a href="manual.ja.html">Auto Complete Modeユーザーマニュアル</a></p>
+
+<h2 id=".E5.88.A9.E7.94.A8.E8.80.85.E3.81.AE.E5.A3.B0">利用者の声</h2>
+
+<p>利用者の声をぜひお聞かせください。あなたの名前（匿名希望可）とコメントをそえて<a href="mailto: tomo@cx4a.org">tomo@cx4a.org</a>までメールでお願いします。どんなコメントでも歓迎です。</p>
+
+<h2 id=".E3.82.BD.E3.83.BC.E3.82.B9.E3.82.B3.E3.83.BC.E3.83.89">ソースコード</h2>
+
+<p>ソースコードは以下のGitリポジトリから取得できます。</p>
+
+<ul>
+<li><a href="http://cx4a.org/repo/auto-complete.git">http://cx4a.org/repo/auto-complete.git</a></li>
+<li><a href="http://github.com/m2ym/auto-complete">http://github.com/m2ym/auto-complete</a> (GitHubミラー)</li>
+</ul>
+
+<h2 id=".E3.83.90.E3.82.B0.E3.83.AC.E3.83.9D.E3.83.BC.E3.83.88">バグレポート</h2>
+
+<p><a href="http://cx4a.org/redmine/projects/auto-complete-mode">Auto Complete Modeのバグトラッキングシステム</a>に新しいチケットを登録してください。</p>
+
+<h2 id=".E3.83.A9.E3.82.A4.E3.82.BB.E3.83.B3.E3.82.B9">ライセンス</h2>
+
+<p>このソフトウェアは<a href="http://gplv3.fsf.org/">GPLv3</a>のもとで配布されます。</p>
+
+</div><div id="footer"><hr /><p>Tomohiro Matsuyama &lt;<a href="mailto: tomo@cx4a.org">tomo@cx4a.org</a>><br />
+<a href="http://cx4a.org/">http://cx4a.org/</a><br />
+<a href="http://www.gnu.org/"><img src="/gnubanner.png" /></a>
+<a href="http://www.gnu.org/software/emacs/"><img src="/emacslogo.png" /></a>
+<a href="http://www.debian.org/"><img src="/debianlogo.png" /></a>
+<a href="http://www.fsf.org/register_form?referrer=8504"><img src="/fsf_button.png" alt="[FSF Associate Member]" width="88" height="31" /></a></p></div></body>
+</html>

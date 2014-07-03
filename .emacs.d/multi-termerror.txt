@@ -1,0 +1,15 @@
+Leaving directory `/Users/suganumatakashi/.emacs.d/elpa/multi-term-20140323.753'
+
+Compiling file /Users/suganumatakashi/.emacs.d/elpa/multi-term-20140323.753/multi-term-pkg.el at Tue Apr 15 23:58:04 2014
+Entering directory `/Users/suganumatakashi/.emacs.d/elpa/multi-term-20140323.753/'
+
+Compiling file /Users/suganumatakashi/.emacs.d/elpa/multi-term-20140323.753/multi-term.el at Tue Apr 15 23:58:04 2014
+multi-term.el:246:1:Warning: cl package required at runtime
+
+In multi-term-dedicated-close:
+multi-term.el:479:18:Warning: reference to free variable
+    `ecb-activated-window-configuration'
+
+In end of data:
+multi-term.el:841:1:Warning: the following functions are not known to be defined: ecb-deactivate,
+    ecb-activate
