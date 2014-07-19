@@ -52,7 +52,7 @@ alias finda='open .'
 
 
 PATH="$PATH":/Applications
-
+PATH="$PATH”:$HOME/bin
 source ~/git-completion.bash
 
 source ~/git-prompt.sh
